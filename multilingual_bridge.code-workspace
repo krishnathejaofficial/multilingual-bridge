@@ -1,0 +1,69 @@
+{
+  "folders": [
+    {
+      "name": "Backend (FastAPI)",
+      "path": "./backend"
+    },
+    {
+      "name": "Flutter App",
+      "path": "./flutter_app"
+    }
+  ],
+  "settings": {
+    "python.defaultInterpreterPath": "${workspaceFolder:Backend (FastAPI)}/venv/bin/python",
+    "python.terminal.activateEnvironment": true,
+    "editor.fontSize": 14,
+    "editor.formatOnSave": true,
+    "[python]": {
+      "editor.defaultFormatter": "ms-python.python"
+    },
+    "[dart]": {
+      "editor.defaultFormatter": "Dart-Code.dart-code"
+    },
+    "files.exclude": {
+      "**/__pycache__": true,
+      "**/*.pyc": true,
+      "**/venv": true,
+      "**/build": true,
+      "**/.dart_tool": true
+    },
+    "powershell.cwd": "Backend (FastAPI)"
+  },
+  "launch": {
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "name": "Backend: FastAPI",
+        "type": "python",
+        "request": "launch",
+        "module": "uvicorn",
+        "args": [
+          "app.main:app",
+          "--reload",
+          "--host", "0.0.0.0",
+          "--port", "8000"
+        ],
+        "cwd": "${workspaceFolder:Backend (FastAPI)}",
+        "envFile": "${workspaceFolder:Backend (FastAPI)}/.env",
+        "console": "integratedTerminal"
+      },
+      {
+        "name": "Flutter: Run App",
+        "type": "dart",
+        "request": "launch",
+        "program": "lib/main.dart",
+        "cwd": "${workspaceFolder:Flutter App}"
+      }
+    ]
+  },
+  "extensions": {
+    "recommendations": [
+      "ms-python.python",
+      "ms-python.vscode-pylance",
+      "Dart-Code.flutter",
+      "Dart-Code.dart-code",
+      "humao.rest-client",
+      "esbenp.prettier-vscode"
+    ]
+  }
+}

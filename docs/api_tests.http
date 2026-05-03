@@ -1,0 +1,86 @@
+### Multilingual Bridge API Tests
+### Requires VS Code REST Client extension
+### Run each request by clicking "Send Request" above it
+
+@baseUrl = http://localhost:8000
+
+### Health Check
+GET {{baseUrl}}/health
+
+###
+
+### Get All Supported Languages
+GET {{baseUrl}}/api/translate/languages
+
+###
+
+### Detect Language - Hindi
+POST {{baseUrl}}/api/translate/detect-language
+Content-Type: application/json
+
+{
+  "text": "नमस्ते, आप कैसे हैं?"
+}
+
+###
+
+### Detect Language - Telugu
+POST {{baseUrl}}/api/translate/detect-language
+Content-Type: application/json
+
+{
+  "text": "మీరు ఎలా ఉన్నారు?"
+}
+
+###
+
+### Translate English → Hindi
+POST {{baseUrl}}/api/translate/translate
+Content-Type: application/json
+
+{
+  "text": "Hello, how are you? I hope you are doing well today.",
+  "source_lang": "en",
+  "target_lang": "hi"
+}
+
+###
+
+### Translate Hindi → Telugu
+POST {{baseUrl}}/api/translate/translate
+Content-Type: application/json
+
+{
+  "text": "नमस्ते, मेरा नाम राज है।",
+  "source_lang": "hi",
+  "target_lang": "te"
+}
+
+###
+
+### Paste & Reply - Explain (with slang)
+POST {{baseUrl}}/api/paste-reply/explain
+Content-Type: application/json
+
+{
+  "pasted_text": "r u cumin 2day? gr8! brb 😊",
+  "user_native_lang": "hi",
+  "speed": "slow"
+}
+
+###
+
+### Paste & Reply - Explain Hindi message
+POST {{baseUrl}}/api/paste-reply/explain
+Content-Type: application/json
+
+{
+  "pasted_text": "कल मीटिंग है सुबह 10 बजे, देर मत करना",
+  "user_native_lang": "te",
+  "speed": "slow"
+}
+
+###
+
+### API Docs
+# Open in browser: http://localhost:8000/docs

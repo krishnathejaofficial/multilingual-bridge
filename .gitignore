@@ -1,0 +1,64 @@
+# ─── Python / Backend ─────────────────────────────────────────────────────────
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+.eggs/
+*.egg
+.env
+*.log
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# ─── Flutter / Dart ────────────────────────────────────────────────────────────
+flutter_app/.dart_tool/
+flutter_app/.flutter-plugins
+flutter_app/.flutter-plugins-dependencies
+flutter_app/.packages
+flutter_app/build/
+flutter_app/*.iml
+flutter_app/android/.gradle/
+flutter_app/android/local.properties
+flutter_app/android/captures/
+flutter_app/android/key.jks
+flutter_app/android/upload-keystore.jks
+flutter_app/ios/Pods/
+flutter_app/ios/.symlinks/
+flutter_app/ios/Flutter/Flutter.framework
+flutter_app/ios/Flutter/Flutter.podspec
+flutter_app/ios/Runner.xcworkspace/
+
+# ─── IDE ──────────────────────────────────────────────────────────────────────
+.idea/
+.vscode/settings.json
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# ─── Models (large files) ─────────────────────────────────────────────────────
+*.bin
+*.pt
+*.ckpt
+models/
+*.safetensors
+
+# ─── Secrets ──────────────────────────────────────────────────────────────────
+*.pem
+*.key
+*.p12
+secrets/
+
+# ─── Temp / OS ────────────────────────────────────────────────────────────────
+tmp/
+temp/
+*.tmp
+node_modules/
